@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgentController;
 use App\Livewire\Settings\Appearance;
 use App\Http\Controllers\UsuarioController;
 use App\Livewire\Settings\Password;
@@ -12,10 +13,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-
+Route::resource('agents', AgentController::class);
 
 
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios');
+
 
 
 
